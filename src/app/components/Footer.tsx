@@ -21,10 +21,10 @@ export default function Footer() {
           <div className={styles.column}>
             <div className={styles.logo}>
               <Image
-                src="/logo-lopez-asociados.png" // ajusta tu logo
+                src="/logo_pravice.png"
                 alt="López & Asociados"
-                width={160}
-                height={50}
+                width={80}
+                height={80}
               />
             </div>
 

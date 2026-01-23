@@ -9,27 +9,27 @@
   display: flex;
   align-items: center;
   z-index: 1000;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Navbar con fondo blanco */
+/* Estado fijo */
 .scrolled {
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* ============================
    CONTENEDOR
 ============================ */
 .container {
-  max-width: 1200px;
-  width: 90%;
+  max-width: 1250px;
+  width: 92%;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 /* ============================
@@ -38,11 +38,6 @@
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
-}
-
-.light {
-  color: white;
 }
 
 .dark {
@@ -55,50 +50,66 @@
 .links {
   list-style: none;
   display: flex;
-  gap: 36px;
+  gap: 34px;
 }
 
 .links li {
-  list-style: none;
+  position: relative;
 }
 
 .links a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
   color: #004a80;
-  white-space: nowrap;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado elegante */
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f7c600, #c4911a);
+  transition: width 0.3s ease;
 }
 
 .links a:hover {
-  color: #f7c600;
+  color: #000;
+}
+
+.links a:hover::after {
+  width: 100%;
 }
 
 /* ============================
-   BOTÓN CTA
+   BOTÓN CTA (PREMIUM)
 ============================ */
 .ctaButton {
-  background-color: #f4c300;
+  background: linear-gradient(135deg, #f7c600, #c4911a);
   border: none;
-  padding: 14px 28px;
+  padding: 13px 30px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 1px;
   color: #004a80;
-  border-radius: 6px;
+  border-radius: 30px;
   cursor: pointer;
+  text-transform: uppercase;
 
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 2px 5px rgba(244, 195, 0, 0.5);
-  transition: background 0.3s ease;
+  box-shadow: 0 8px 20px rgba(196, 145, 26, 0.35);
+  transition: all 0.3s ease;
 }
 
 .ctaButton:hover {
-  background-color: #5eb3e4;
-  color: #000;
+  background: linear-gradient(135deg, #004a80, #5eb3e4);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* ============================
@@ -107,47 +118,37 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
 }
 
 .hamburger span {
   width: 28px;
-  height: 3px;
+  height: 2px;
   background: #004a80;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* ============================
-   TABLET Y MOBILE
+   TABLET & MOBILE
 ============================ */
-@media (max-width: 850px) {
-  .container {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* hamburguesa visible */
+@media (max-width: 900px) {
   .hamburger {
     display: flex;
   }
 
-  /* menú oculto lateral */
   .links {
     position: fixed;
     top: 85px;
     right: -100%;
-    width: 75%;
-    height: 100vh;
-    background: white;
+    width: 80%;
+    height: calc(100vh - 85px);
+    background: #ffffff;
     flex-direction: column;
-    gap: 28px;
-    padding: 40px 24px;
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-    transition: right 0.3s ease;
-    z-index: 90;
+    gap: 26px;
+    padding: 50px 30px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    transition: right 0.35s ease;
   }
 
   .active {
@@ -155,26 +156,23 @@
   }
 
   .links a {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    color: #004a80 !important;
+    color: #004a80;
   }
 
-  /* ====================
-     CORREGIDO: BOTÓN CENTRADO DE VERDAD
-     ==================== */
+  .links a::after {
+    display: none;
+  }
+
+  /* CTA centrado */
   .ctaButton {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
-
     width: 90%;
-    max-width: 330px;
-    margin-top: 15px;
-
-    white-space: normal;
-    text-align: center;
+    max-width: 320px;
   }
 }
 
@@ -183,9 +181,8 @@
 ============================ */
 @media (max-width: 480px) {
   .ctaButton {
-    max-width: 260px;
-    font-size: 14px;
-    padding: 10px 16px;
+    font-size: 13px;
+    padding: 12px 20px;
   }
 
   .links a {

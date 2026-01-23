@@ -1,0 +1,151 @@
+.section {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #004a80;
+  font-weight: 700;
+}
+
+.header p {
+  color: #808080;
+  line-height: 1.6;
+}
+
+/* =========================
+   DESTACADO
+========================= */
+.featured {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.featuredImage {
+  height: 280px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+}
+
+/* Etiqueta */
+.featuredContent .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #004a80;
+  background-color: rgba(244, 195, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.featuredContent h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #004a80;
+}
+
+.featuredContent p {
+  color: #808080;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.readMore {
+  font-weight: 600;
+  color: #004a80;
+  text-decoration: none;
+}
+
+.readMore:hover {
+  color: #c4911a;
+  text-decoration: underline;
+}
+
+/* =========================
+   LISTADO EDITORIAL
+========================= */
+.list {
+  border-top: 1px solid #e5e7eb;
+}
+
+.item {
+  padding: 25px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #808080;
+}
+
+.item h4 {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  color: #004a80;
+}
+
+.item p {
+  color: #808080;
+  margin-bottom: 8px;
+}
+
+.item a {
+  font-weight: 600;
+  color: #004a80;
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: #c4911a;
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  margin-top: 40px;
+}
+
+.allArticles {
+  font-weight: 600;
+  color: #004a80;
+  text-decoration: none;
+}
+
+.allArticles:hover {
+  color: #c4911a;
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredImage {
+    height: 220px;
+  }
+}

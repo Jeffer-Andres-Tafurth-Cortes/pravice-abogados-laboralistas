@@ -70,7 +70,7 @@ export default function Navbar() {
         </ul>
 
         <button className={styles.ctaButton} onClick={handleClick}>
-          .
+          CONTACTANOS
         </button>
 
         {/* BOTÓN HAMBURGUESA */}

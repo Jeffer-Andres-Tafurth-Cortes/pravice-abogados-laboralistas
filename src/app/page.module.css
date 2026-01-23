@@ -3,9 +3,9 @@
 ======================== */
 .hero {
   background:
-    linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.85)),
+    linear-gradient(rgba(0, 74, 128, 0.88), rgba(0, 74, 128, 0.88)),
     url("/hero-law.jpg") center / cover no-repeat;
-  padding: 120px 20px;
+  padding: 140px 20px 120px;
   color: #ffffff;
 }
 
@@ -16,24 +16,28 @@
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 22px;
 }
 
 .hero h1 span {
-  color: #f4c430;
+  color: #f7c600;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 32px;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #e6edf3;
+  max-width: 720px;
+  margin: 0 auto 36px;
 }
 
 .heroActions {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -41,53 +45,91 @@
    BOTONES
 ======================== */
 .primaryBtn {
-  background-color: #f4c430;
-  color: #0b2c4d;
-  padding: 14px 28px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #f7c600, #c4911a);
+  color: #004a80;
+  padding: 14px 32px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  box-shadow: 0 10px 25px rgba(196, 145, 26, 0.35);
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background: linear-gradient(135deg, #004a80, #5eb3e4);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .secondaryBtn {
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   color: #ffffff;
-  padding: 14px 28px;
-  border-radius: 6px;
+  padding: 14px 32px;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #f7c600;
 }
 
 /* ========================
    SERVICIOS
 ======================== */
 .services {
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .services h2 {
-  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #004a80;
+  margin-bottom: 55px;
 }
 
 .servicesGrid {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 32px;
 }
 
 .serviceCard {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 36px 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 .serviceCard svg {
-  font-size: 36px;
-  color: #0b2c4d;
-  margin-bottom: 16px;
+  font-size: 38px;
+  color: #004a80;
+  margin-bottom: 18px;
+}
+
+.serviceCard h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #004a80;
+}
+
+.serviceCard p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #808080;
 }
 
 /* ========================
@@ -95,54 +137,81 @@
 ======================== */
 .why {
   background-color: #f5f7fa;
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.why h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #004a80;
 }
 
 .whyGrid {
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: 45px auto 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 26px;
 }
 
 .whyItem {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 500;
+  gap: 14px;
+  font-weight: 600;
+  color: #004a80;
+}
+
+.whyItem svg {
+  color: #f7c600;
+  font-size: 20px;
 }
 
 /* ========================
    PROCESO
 ======================== */
 .process {
-  padding: 70px 20px;
+  padding: 90px 20px;
   text-align: center;
+  background-color: #ffffff;
+}
+
+.process h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #004a80;
 }
 
 .processSteps {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  gap: 50px;
+  margin-top: 50px;
   flex-wrap: wrap;
 }
 
 .step {
-  max-width: 200px;
+  max-width: 220px;
 }
 
 .step span {
-  display: inline-block;
-  background-color: #0b2c4d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #004a80, #5eb3e4);
   color: #ffffff;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  line-height: 42px;
-  margin-bottom: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.step p {
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.6;
 }
 
 /* ========================
@@ -165,5 +234,9 @@
 
   .hero h1 {
     font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
