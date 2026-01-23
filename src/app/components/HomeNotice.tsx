@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles/HomeNotice.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeNotice() {
   const [visible, setVisible] = useState(false);
@@ -30,16 +30,23 @@ export default function HomeNotice() {
           <FontAwesomeIcon icon={faXmark} />
         </button>
 
-        <FontAwesomeIcon icon={faCircleInfo} className={styles.icon} />
+        {/* ========= IMAGEN / PLACEHOLDER ========= */}
+        <div className={styles.imagePlaceholder}>
+          {/* 
+            Cuando tengas la imagen:
+            <img src="/img/aviso.jpg" alt="Aviso legal" />
+            o con next/image
+          */}
+        </div>
 
         <h3>Aviso importante</h3>
-        <p>Quieres cumplir con la reforma laboral YA</p>
+        <p>¿Quieres cumplir con la reforma laboral YA?</p>
 
         <Link
           href="https://pravicestore-pagina-web.vercel.app/"
           className={styles.actionBtn}
         >
-          COMPRA AQUI
+          COMPRA AQUÍ
         </Link>
       </div>
     </div>
