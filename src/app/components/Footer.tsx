@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
 
             <p className={styles.description}>
-              López & Asociados es una firma dedicada a la práctica del derecho
+              Pravice Abogados es una firma dedicada a la práctica del derecho
               laboral y de la seguridad social con énfasis en la asesoría y
               representación de empresas.
             </p>
