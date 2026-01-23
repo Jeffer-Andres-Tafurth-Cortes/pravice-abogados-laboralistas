@@ -35,7 +35,10 @@ export default function HomeNotice() {
         <h3>Aviso importante</h3>
         <p>Quieres cumplir con la reforma laboral YA</p>
 
-        <Link href="/aviso-legal" className={styles.actionBtn}>
+        <Link
+          href="https://pravicestore-pagina-web.vercel.app/"
+          className={styles.actionBtn}
+        >
           COMPRA AQUI
         </Link>
       </div>
