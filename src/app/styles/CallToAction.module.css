@@ -1,0 +1,85 @@
+.cta {
+  position: relative;
+  padding: 90px 20px;
+  background:
+    linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.85)),
+    url("/cta-bg.jpg"); /* opcional: puedes quitar la imagen */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 24px;
+  margin: 100px auto;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+/* Título */
+.cta h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+}
+
+/* Texto */
+.cta p {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.6;
+}
+
+/* Botón principal */
+.primaryBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  color: #0b2c4d;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  background-color: #f1f5f9;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Efecto decorativo suave */
+.cta::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta {
+    padding: 70px 20px;
+    border-radius: 18px;
+  }
+
+  .cta h2 {
+    font-size: 1.9rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+
+  .primaryBtn {
+    padding: 14px 32px;
+  }
+}

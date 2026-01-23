@@ -1,0 +1,80 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.notice {
+  position: relative;
+  background: #ffffff;
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 90%;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.35s ease;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #0b2c4d;
+  margin-bottom: 15px;
+}
+
+.notice h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #0b2c4d;
+}
+
+.notice p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 25px;
+}
+
+.actionBtn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #0b2c4d;
+  color: #ffffff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.actionBtn:hover {
+  background: #09305a;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
