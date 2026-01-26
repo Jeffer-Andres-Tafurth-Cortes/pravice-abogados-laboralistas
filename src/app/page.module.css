@@ -83,7 +83,7 @@
 .services {
   padding: 90px 20px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #f5f7fa;
 }
 
 .services h2 {
@@ -103,53 +103,55 @@
 
 .serviceCard {
   background: #ffffff;
-  padding: 36px 30px;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  padding: 38px 30px;
+  border-radius: 18px;
+  border-top: 4px solid #f7c600;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
 }
 
 .serviceCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.14);
 }
 
 .serviceCard svg {
-  font-size: 38px;
+  font-size: 40px;
   color: #004a80;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .serviceCard h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #004a80;
 }
 
 .serviceCard p {
   font-size: 15px;
-  line-height: 1.6;
-  color: #808080;
+  line-height: 1.65;
+  color: #666666;
 }
 
 /* ========================
-   POR QUÉ
+   POR QUÉ ELEGIRNOS
 ======================== */
 .why {
-  background-color: #f5f7fa;
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
+  background: linear-gradient(135deg, #004a80, #00355e);
+  color: #ffffff;
 }
 
 .why h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
-  color: #004a80;
+  margin-bottom: 45px;
 }
 
 .whyGrid {
   max-width: 900px;
-  margin: 45px auto 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 26px;
@@ -159,13 +161,20 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
   font-weight: 600;
-  color: #004a80;
+  backdrop-filter: blur(6px);
 }
 
 .whyItem svg {
   color: #f7c600;
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.whyItem span {
+  color: #ffffff;
 }
 
 /* ========================
@@ -178,7 +187,7 @@
 }
 
 .process h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
   color: #004a80;
 }
@@ -186,31 +195,35 @@
 .processSteps {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin-top: 50px;
+  gap: 40px;
+  margin-top: 55px;
   flex-wrap: wrap;
 }
 
 .step {
-  max-width: 220px;
+  background: #f5f7fa;
+  padding: 30px 24px;
+  border-radius: 18px;
+  max-width: 240px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
 .step span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #004a80, #5eb3e4);
-  color: #ffffff;
-  width: 46px;
-  height: 46px;
+  background: linear-gradient(135deg, #f7c600, #c4911a);
+  color: #004a80;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  font-weight: 700;
-  margin-bottom: 14px;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
 .step p {
   font-size: 15px;
-  color: #808080;
+  color: #555555;
   line-height: 1.6;
 }
 
