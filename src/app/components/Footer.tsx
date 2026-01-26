@@ -102,6 +102,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.socialBtn} ${styles.whatsapp}`}
+          aria-label="WhatsApp de Pravice"
         >
           <FontAwesomeIcon icon={faWhatsapp} />
         </a>
@@ -111,6 +112,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.socialBtn} ${styles.instagram}`}
+          aria-label="Instagram de Pravice"
         >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
@@ -120,6 +122,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.socialBtn} ${styles.linkedin}`}
+          aria-label="LinkedIn de Pravice"
         >
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>

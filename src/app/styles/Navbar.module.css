@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   z-index: 1000;
+
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -50,6 +51,7 @@
 .links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 34px;
 }
 
@@ -88,8 +90,12 @@
 }
 
 /* ============================
-   BOTÓN CTA (PREMIUM)
+   CTA BUTTON
 ============================ */
+.ctaItem {
+  margin-left: 20px;
+}
+
 .ctaButton {
   background: linear-gradient(135deg, #f7c600, #c4911a);
   border: none;
@@ -143,16 +149,24 @@
     right: -100%;
     width: 80%;
     height: calc(100vh - 85px);
+
     background: #ffffff;
     flex-direction: column;
+    align-items: center;
     gap: 26px;
     padding: 50px 30px;
+
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
     transition: right 0.35s ease;
   }
 
   .active {
     right: 0;
+  }
+
+  .links li {
+    width: 100%;
+    text-align: center;
   }
 
   .links a {
@@ -165,13 +179,16 @@
     display: none;
   }
 
-  /* CTA centrado */
+  /* CTA dentro del menú */
+  .ctaItem {
+    margin-top: 30px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
   .ctaButton {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
+    width: 100%;
     max-width: 320px;
   }
 }

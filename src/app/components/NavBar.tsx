@@ -67,11 +67,12 @@ export default function Navbar() {
               CONTACTO
             </Link>
           </li>
+          <li>
+            <button className={styles.ctaButton} onClick={handleClick}>
+              SOLICITA ASESORÍA LABORAL
+            </button>
+          </li>
         </ul>
-
-        <button className={styles.ctaButton} onClick={handleClick}>
-          CONTACTANOS
-        </button>
 
         {/* BOTÓN HAMBURGUESA */}
         <div
