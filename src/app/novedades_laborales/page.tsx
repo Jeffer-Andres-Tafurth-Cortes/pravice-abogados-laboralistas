@@ -11,10 +11,12 @@ export default function NovedadesLaborales() {
             HEADER
         ====================== */}
         <header className={styles.header}>
-          <h2>Novedades laborales en Colombia</h2>
+          <h2>Novedades laborales en Colombia: cambios legales y tendencias</h2>
           <p>
-            Manténgase actualizado con los cambios normativos, sentencias y
-            tendencias clave en el derecho laboral colombiano.
+            Manténgase actualizado con los cambios normativos, noticias
+            recientes y decisiones que impactan el derecho laboral, las
+            obligaciones de empleadores y los derechos de los trabajadores en
+            Colombia.
           </p>
         </header>
 
@@ -27,16 +29,29 @@ export default function NovedadesLaborales() {
           <div className={styles.featuredContent}>
             <span className={styles.tag}>Reforma laboral</span>
             <h3>
-              Cambios clave en la reforma laboral que impactan a los empleadores
+              Reforma laboral 2025 en Colombia: cambios clave que impactan
+              jornadas, salarios y contratos
             </h3>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              vehicula, lorem at volutpat fermentum, sapien justo dictum libero,
-              sit amet consequat lorem erat sed neque.
+              En Colombia, la reforma laboral sancionada como Ley 2466 de 2025
+              introduce cambios importantes en la regulación de jornadas
+              laborales, contratos, horas extras y recargos dominicales que
+              afectan tanto a empleadores como a trabajadores. La ley busca
+              fortalecer condiciones de trabajo, promover empleo formal y
+              garantizar mayores derechos laborales, incluyendo ajustes en las
+              horas de trabajo semanales y la eliminación de ciertas prácticas
+              de precarización. Recomendamos revisar los detalles de la reforma
+              y sus implicaciones legales para su empresa o negocio.
             </p>
 
-            <Link href="/novedades/reforma-laboral" className={styles.readMore}>
-              Leer análisis completo →
+            <Link
+              href="https://www.elcolombiano.com/negocios/prima-diciembre-2025-cambios-reforma-laboral-colombia-pagos-fechas-calculo-FA31464890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.readMore}
+            >
+              Ver noticia completa → (El Colombiano)
             </Link>
           </div>
         </article>
@@ -47,44 +62,76 @@ export default function NovedadesLaborales() {
         <div className={styles.list}>
           <article className={styles.item}>
             <span className={styles.date}>Enero 2026</span>
-            <h4>Jornada laboral: nuevos ajustes y aplicación práctica</h4>
+            <h4>
+              Empleadores deberán afiliar a trabajadoras domésticas a la ARL sin
+              excepción
+            </h4>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet.
+              El Ministerio del Trabajo reafirma que la afiliación de empleadas
+              domésticas al sistema de seguridad social y a la Administradora de
+              Riesgos Laborales (ARL) es obligatoria para todos los empleadores
+              sin importar la jornada laboral. Este cambio repercute
+              directamente sobre las obligaciones laborales y el cumplimiento
+              normativo de las empresas.
             </p>
-            <Link href="/novedades/jornada-laboral">Leer más</Link>
+
+            <Link
+              href="https://www.infobae.com/colombia/2026/01/27/ley-en-colombia-exige-la-afiliacion-de-las-empleadas-domesticas-a-la-arl-sin-excepciones/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leer noticia → (Infobae Colombia)
+            </Link>
           </article>
 
           <article className={styles.item}>
             <span className={styles.date}>Diciembre 2025</span>
             <h4>
-              Obligaciones del empleador frente a incapacidades prolongadas
+              Ajustes de jornada laboral y recargos en Colombia tras la reforma
             </h4>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio praesent libero.
+              La reforma laboral reduce gradualmente la jornada máxima legal a
+              42 horas semanales y establece cambios en los recargos por trabajo
+              nocturno, dominical y festivo — incrementando progresivamente la
+              compensación, en un esfuerzo por aumentar la protección del
+              trabajador sin disminuir salarios. Estos ajustes tienen impacto
+              directo en la gestión de nómina de las empresas.
             </p>
-            <Link href="/novedades/incapacidades">Leer más</Link>
+
+            <Link
+              href="https://cambiocolombia.com/economia/articulo/2025/6/lo-que-realmente-cambiara-en-su-empleo-con-la-nueva-ley-laboral-jornada-contratos/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leer noticia → (Cambio Colombia)
+            </Link>
           </article>
 
           <article className={styles.item}>
             <span className={styles.date}>Noviembre 2025</span>
-            <h4>Últimas sentencias de la Corte Suprema en materia laboral</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              cursus ante dapibus diam.
-            </p>
-            <Link href="/novedades/sentencias-laborales">Leer más</Link>
-          </article>
-        </div>
+            <h4>
+              Prima de diciembre y otros ajustes salariales tras la reforma
+              laboral
+            </h4>
 
-        {/* ======================
-            CTA
-        ====================== */}
-        <div className={styles.footer}>
-          <Link href="/novedades" className={styles.allArticles}>
-            Ver todas las novedades laborales →
-          </Link>
+            <p>
+              Además de los cambios en jornada, la reforma laboral ha modificado
+              algunos aspectos vinculados al cálculo de pagos como la prima de
+              servicios y otros beneficios salariales que las empresas deben
+              considerar antes de cerrar el año fiscal. Estos ajustes buscan
+              armonizar el derecho laboral con los nuevos estándares legales.
+            </p>
+
+            <Link
+              href="https://www.elcolombiano.com/negocios/prima-diciembre-2025-cambios-reforma-laboral-colombia-pagos-fechas-calculo-FA31464890"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leer noticia → (El Colombiano)
+            </Link>
+          </article>
         </div>
       </div>
     </section>
