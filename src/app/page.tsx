@@ -135,22 +135,31 @@ export default function Home() {
           PROCESO
       ========================== */}
       <section className={styles.process}>
-        <h2>Nuestro proceso de trabajo</h2>
+        <h2>Nuestro proceso de asesoría y defensa laboral</h2>
 
         <div className={styles.processSteps}>
           <div className={styles.step}>
             <span>1</span>
-            <p>Análisis del caso y asesoría inicial</p>
+            <p>
+              Análisis jurídico del caso y asesoría laboral inicial
+              personalizada
+            </p>
           </div>
 
           <div className={styles.step}>
             <span>2</span>
-            <p>Definición de estrategia legal</p>
+            <p>
+              Diseño de la estrategia legal laboral más adecuada para su empresa
+              o caso
+            </p>
           </div>
 
           <div className={styles.step}>
             <span>3</span>
-            <p>Ejecución y acompañamiento continuo</p>
+            <p>
+              Ejecución del proceso y acompañamiento jurídico continuo hasta su
+              resolución
+            </p>
           </div>
         </div>
       </section>
