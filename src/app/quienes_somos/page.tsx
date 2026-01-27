@@ -6,24 +6,24 @@ import styles from "./QuienesSomos.module.css";
 
 const advantages = [
   {
-    title: "Experiencia especializada",
+    title: "Experiencia y enfoque especializado",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
+      "Contamos con un enfoque técnico y estratégico que nos permite analizar cada situación de forma integral, brindando soluciones jurídicas claras y bien fundamentadas.",
   },
   {
-    title: "Acompañamiento personalizado",
+    title: "Acompañamiento cercano y personalizado",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+      "Acompañamos a nuestros clientes en cada etapa del proceso, ofreciendo comunicación constante, claridad en la información y atención personalizada.",
   },
   {
-    title: "Cobertura nacional",
+    title: "Cobertura en todo Colombia",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+      "Prestamos nuestros servicios a nivel nacional, con atención remota y oficina principal en Bogotá, facilitando el acceso a asesoría jurídica desde cualquier ciudad.",
   },
   {
-    title: "Resultados comprobados",
+    title: "Compromiso con resultados",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat.",
+      "Trabajamos con un enfoque orientado a resultados, priorizando la prevención de riesgos, la eficiencia en los procesos y la toma de decisiones informadas.",
   },
 ];
 
@@ -45,8 +45,11 @@ export default function QuienesSomos() {
       <div className={styles.intro}>
         <h2>¿Quiénes somos?</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Somos una firma dedicada a la prestación de servicios jurídicos y de
+          asesoría estratégica, orientada a brindar soluciones claras,
+          responsables y alineadas con la normativa vigente en Colombia.
+          Acompañamos a empresas y personas en la toma de decisiones legales,
+          con un enfoque preventivo, técnico y humano.
         </p>
       </div>
 
@@ -58,8 +61,12 @@ export default function QuienesSomos() {
           {[1, 2, 3].map((item) => (
             <div key={item} className={styles.card}>
               <div className={styles.photoPlaceholder} />
-              <h4>Nombre del abogado</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h4>Profesional del equipo</h4>
+              <p>
+                Integrante del equipo con experiencia en análisis jurídico,
+                acompañamiento estratégico y gestión de procesos, enfocado en
+                brindar soluciones eficientes y responsables a cada caso.
+              </p>
             </div>
           ))}
         </div>
@@ -100,8 +107,11 @@ export default function QuienesSomos() {
         <div className={styles.historyText}>
           <h3>Nuestra historia</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Nuestra firma nace con el propósito de ofrecer un servicio jurídico
+            moderno, transparente y accesible, adaptado a las necesidades
+            actuales de empresas y organizaciones en Colombia. A lo largo del
+            tiempo hemos consolidado una forma de trabajo basada en la
+            confianza, el análisis riguroso y el acompañamiento permanente.
           </p>
         </div>
 
