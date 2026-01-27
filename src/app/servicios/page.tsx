@@ -20,61 +20,61 @@ const services = [
     icon: faGavel,
     title: "Demandas laborales",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
+      "Representación y defensa en demandas laborales ante juzgados y tribunales, incluyendo procesos ordinarios, especiales y de seguridad social.",
   },
   {
     icon: faHandshake,
     title: "Conciliaciones extrajudiciales",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+      "Acompañamiento y representación en conciliaciones laborales extrajudiciales, orientadas a la solución efectiva de conflictos y la reducción de riesgos legales.",
   },
   {
     icon: faFileContract,
     title: "Contratos laborales",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+      "Elaboración, revisión y actualización de contratos laborales, acuerdos especiales y documentos relacionados con la relación laboral.",
   },
   {
     icon: faUserTie,
     title: "Asesoría al trabajador",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat.",
+      "Asesoría jurídica integral a trabajadores en asuntos laborales, derechos contractuales, reclamaciones y procesos judiciales.",
   },
   {
     icon: faBuilding,
-    title: "Asesoría a empresas",
+    title: "Asesoría laboral a empresas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde.",
+      "Asesoría preventiva y estratégica para empresas en materia laboral, cumplimiento normativo, gestión de personal y relaciones laborales.",
   },
   {
     icon: faScaleBalanced,
     title: "Defensa jurídica integral",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem.",
+      "Defensa legal integral en procesos laborales y de seguridad social, con un enfoque estratégico orientado a resultados y mitigación de riesgos.",
   },
   {
     icon: faUsers,
     title: "Procesos colectivos",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam.",
+      "Asesoría y representación en procesos colectivos, conflictos sindicales, negociaciones colectivas y relaciones laborales complejas.",
   },
   {
     icon: faMoneyBillWave,
     title: "Liquidaciones laborales",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure.",
+      "Cálculo, revisión y elaboración de liquidaciones laborales, indemnizaciones y prestaciones sociales conforme a la ley colombiana.",
   },
   {
     icon: faClipboardList,
     title: "Auditorías laborales",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus.",
+      "Auditorías laborales preventivas para identificar riesgos, verificar el cumplimiento legal y fortalecer la gestión laboral de las empresas.",
   },
   {
     icon: faBriefcase,
     title: "Despidos y reintegros",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam.",
+      "Asesoría y representación en procesos de despido, terminación de contratos, reintegros laborales y controversias derivadas.",
   },
 ];
 
@@ -82,10 +82,13 @@ export default function Servicios() {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2>Nuestros Servicios</h2>
+        <h2>Servicios de derecho laboral en Colombia</h2>
+
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ofrecemos servicios jurídicos especializados en derecho laboral y
+          seguridad social, orientados a la asesoría, prevención y defensa de
+          empresas y trabajadores en Colombia. Contamos con atención a nivel
+          nacional y oficina principal en Bogotá.
         </p>
       </div>
 
