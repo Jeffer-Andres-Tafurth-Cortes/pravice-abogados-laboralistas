@@ -22,22 +22,25 @@ export default function Footer() {
             <div className={styles.logo}>
               <Image
                 src="/logo_pravice.png"
-                alt="López & Asociados"
+                alt="Pravice Abogados Laboralistas en Bogotá, Colombia"
                 width={80}
                 height={80}
+                priority
               />
             </div>
 
             <p className={styles.description}>
-              Pravice Abogados es una firma dedicada a la práctica del derecho
-              laboral y de la seguridad social con énfasis en la asesoría y
-              representación de empresas.
+              Pravice Abogados es una firma de{" "}
+              <strong>abogados laboralistas en Bogotá</strong>, especializada en{" "}
+              <strong>derecho laboral y seguridad social en Colombia</strong>,
+              con amplia experiencia en la asesoría y representación jurídica de
+              empresas.
             </p>
 
             <p className={styles.email}>
               <strong>Email</strong>
               <br />
-              correo Pravice
+              <a href="mailto:contacto@pravice.com">contacto@pravice.com</a>
             </p>
           </div>
 
@@ -54,7 +57,9 @@ export default function Footer() {
                 <Link href="/servicios">Servicios</Link>
               </li>
               <li>
-                <Link href="/novedades_laborales">Novedades Laborales</Link>
+                <Link href="/novedades_laborales">
+                  Noticias y novedades Laborales
+                </Link>
               </li>
               <li>
                 <Link href="/contacto">Contacto</Link>
@@ -74,9 +79,7 @@ export default function Footer() {
               <br />
               Edificio calle 100
               <br />
-              PBX
-              <br />
-              FAX
+              601 3099331
             </p>
           </div>
         </div>
@@ -85,7 +88,10 @@ export default function Footer() {
             FOOTER BOTTOM
         ========================= */}
         <div className={styles.bottom}>
-          <span>Copyright © {new Date().getFullYear()} Pravice Abogados</span>
+          <span>
+            © {new Date().getFullYear()} Pravice Abogados Laboralistas – Bogotá,
+            Colombia
+          </span>
 
           <Link href="/politica-datos" className={styles.policy}>
             Política de tratamiento de datos
