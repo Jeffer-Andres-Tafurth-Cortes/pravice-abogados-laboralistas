@@ -13,10 +13,11 @@ export default function Contacto() {
             HEADER
         ====================== */}
         <header className={styles.header}>
-          <h2>Contáctenos</h2>
+          <h2>Contacto con abogados laboralistas en Colombia</h2>
           <p>
-            Nuestro equipo de abogados laboralistas está listo para brindarle
-            asesoría clara, estratégica y oportuna.
+            En Pravice Abogados brindamos asesoría legal especializada en
+            derecho laboral y seguridad social para empresas y empleadores en
+            toda Colombia, con atención directa desde nuestra oficina en Bogotá.
           </p>
         </header>
 
@@ -25,18 +26,23 @@ export default function Contacto() {
         ====================== */}
         <div className={styles.actions}>
           <a
-            href="https://api.whatsapp.com/send?phone=573001234567"
+            href="https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.whatsappBtn}
+            aria-label="Contactar abogados laboralistas por WhatsApp"
           >
             <FontAwesomeIcon icon={faWhatsapp} />
-            Contactar por WhatsApp
+            Asesoría laboral inmediata por WhatsApp
           </a>
 
-          <a href="mailto:contacto@tudominio.com" className={styles.emailBtn}>
+          <a
+            href="mailto:contacto@tudominio.com"
+            className={styles.emailBtn}
+            aria-label="Enviar correo a abogados laboralistas en Bogotá"
+          >
             <FontAwesomeIcon icon={faEnvelope} />
-            Enviar correo electrónico
+            Solicitar asesoría legal por correo
           </a>
         </div>
 
@@ -44,16 +50,21 @@ export default function Contacto() {
             MAPA
         ====================== */}
         <div className={styles.mapSection}>
-          <h3>Nuestra oficina</h3>
+          <h3>Oficina de abogados laboralistas en Bogotá</h3>
+
+          <p className={styles.mapDescription}>
+            Nuestra firma cuenta con oficina física en Bogotá, desde donde
+            atendemos procesos laborales, asesorías empresariales y consultas
+            legales para clientes en toda Colombia.
+          </p>
 
           <div className={styles.mapWrapper}>
-            {/* Google Maps – Reemplaza la URL luego */}
             <iframe
-              title="Ubicación oficina Pravice"
+              title="Ubicación oficina de abogados laboralistas en Bogotá - Pravice Abogados"
               src="https://www.google.com/maps?q=Abogados%20Especialistas%20Pravice%20Bogot%C3%A1&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            />
           </div>
         </div>
       </div>

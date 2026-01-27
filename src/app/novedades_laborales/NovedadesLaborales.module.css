@@ -40,8 +40,11 @@
 }
 
 .featuredImage {
+  position: relative; /* 🔑 OBLIGATORIO */
+  width: 100%;
   height: 280px;
   border-radius: 18px;
+  overflow: hidden;
   background: linear-gradient(135deg, #e5e7eb, #f9fafb);
 }
 

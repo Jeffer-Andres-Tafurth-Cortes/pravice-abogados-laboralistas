@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./NovedadesLaborales.module.css";
 import Link from "next/link";
 
@@ -24,7 +25,16 @@ export default function NovedadesLaborales() {
             NOVEDAD DESTACADA
         ====================== */}
         <article className={styles.featured}>
-          <div className={styles.featuredImage}>{/* Imagen destacada */}</div>
+          <div className={styles.featuredImage}>
+            <Image
+              src="/fotoBogota.jpg"
+              alt="Vista de Bogotá, Colombia"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
 
           <div className={styles.featuredContent}>
             <span className={styles.tag}>Reforma laboral</span>
