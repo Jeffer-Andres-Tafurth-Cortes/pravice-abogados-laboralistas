@@ -1,9 +1,7 @@
 .cta {
   position: relative;
   padding: 90px 20px;
-  background:
-    linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.85)),
-    url("/cta-bg.jpg"); /* opcional: puedes quitar la imagen */
+  background: linear-gradient(135deg, #004a80 0%, #00345c 100%);
   background-size: cover;
   background-position: center;
   text-align: center;

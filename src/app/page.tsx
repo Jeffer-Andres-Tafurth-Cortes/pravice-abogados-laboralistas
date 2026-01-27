@@ -16,29 +16,32 @@ export default function Home() {
   return (
     <main>
       <HomeNotice />
+
       {/* =========================
           HERO
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>
-            Abogados laboralistas expertos en la defensa de
+            Abogados laboralistas en Colombia especializados en la defensa de
             <span> empresas y empleadores</span>
           </h1>
 
           <p>
-            Brindamos asesoría legal especializada en derecho laboral y
-            seguridad social, protegiendo los intereses de su empresa con
-            soluciones estratégicas y efectivas.
+            Somos una firma de abogados laboralistas con sede en Bogotá y
+            cobertura en todo Colombia. Brindamos asesoría legal estratégica en
+            derecho laboral y seguridad social, ayudando a empresas y
+            empleadores a prevenir riesgos, resolver conflictos y tomar
+            decisiones jurídicas seguras.
           </p>
 
           <div className={styles.heroActions}>
             <Link href="/contacto" className={styles.primaryBtn}>
-              Agenda una asesoría
+              Agenda una asesoría laboral
             </Link>
 
             <Link href="/servicios" className={styles.secondaryBtn}>
-              Conoce nuestros servicios
+              Servicios en derecho laboral
             </Link>
           </div>
         </div>
@@ -48,72 +51,82 @@ export default function Home() {
           SERVICIOS
       ========================== */}
       <section className={styles.services}>
-        <h2>Nuestros servicios</h2>
+        <h2>Servicios de abogados laboralistas para empresas en Colombia</h2>
 
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
             <FontAwesomeIcon icon={faBriefcase} />
-            <h3>Asesoría laboral empresarial</h3>
+            <h3>Asesoría laboral empresarial permanente</h3>
             <p>
-              Acompañamiento permanente en relaciones laborales, contratos,
-              reglamentos internos y cumplimiento normativo.
+              Brindamos asesoría jurídica continua a empresas y empleadores en
+              Colombia, apoyando la correcta gestión de relaciones laborales,
+              contratos de trabajo, reglamentos internos y el cumplimiento de la
+              normativa laboral vigente.
             </p>
           </div>
 
           <div className={styles.serviceCard}>
             <FontAwesomeIcon icon={faFileContract} />
-            <h3>Contratación y desvinculación</h3>
+            <h3>Contratación, desvinculación y liquidaciones</h3>
             <p>
-              Elaboración y revisión de contratos laborales, terminaciones,
-              liquidaciones y acuerdos.
+              Elaboramos y revisamos contratos laborales, procesos de
+              terminación, liquidaciones y acuerdos, garantizando seguridad
+              jurídica y reducción de contingencias para las empresas.
             </p>
           </div>
 
           <div className={styles.serviceCard}>
             <FontAwesomeIcon icon={faScaleBalanced} />
-            <h3>Defensa judicial</h3>
+            <h3>Defensa judicial en procesos laborales</h3>
             <p>
-              Representación en procesos judiciales laborales, demandas,
-              conciliaciones y litigios.
+              Representamos a empresas y empleadores en procesos judiciales
+              laborales, demandas, conciliaciones y litigios ante las
+              autoridades competentes, con enfoque estratégico y preventivo.
             </p>
           </div>
 
           <div className={styles.serviceCard}>
             <FontAwesomeIcon icon={faHandshake} />
-            <h3>Conciliaciones y negociaciones</h3>
+            <h3>Conciliaciones y negociación de conflictos laborales</h3>
             <p>
-              Estrategias preventivas para la solución de conflictos laborales y
-              reducción de riesgos.
+              Diseñamos estrategias de conciliación y negociación para la
+              solución efectiva de conflictos laborales, minimizando riesgos
+              legales y protegiendo los intereses empresariales.
             </p>
           </div>
         </div>
       </section>
 
       {/* =========================
-          POR QUÉ ELEGIRNOS
-      ========================== */}
+            POR QUÉ ELEGIRNOS
+        ========================== */}
       <section className={styles.why}>
-        <h2>¿Por qué elegirnos?</h2>
+        <h2>¿Por qué elegir nuestros abogados laboralistas en Colombia?</h2>
 
         <div className={styles.whyGrid}>
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Especialistas en derecho laboral</span>
+            <span>
+              Especialistas en derecho laboral y seguridad social empresarial
+            </span>
           </div>
 
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Enfoque estratégico empresarial</span>
+            <span>Enfoque estratégico orientado a empresas y empleadores</span>
           </div>
 
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Prevención de riesgos legales</span>
+            <span>
+              Prevención de riesgos legales y reducción de contingencias
+              laborales
+            </span>
           </div>
 
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Atención personalizada</span>
+            <span>Atención personalizada con cobertura en todo Colombia</span>
           </div>
         </div>
       </section>
