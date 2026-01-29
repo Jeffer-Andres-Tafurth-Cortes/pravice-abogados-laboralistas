@@ -36,7 +36,11 @@ export default function Home() {
           </p>
 
           <div className={styles.heroActions}>
-            <Link href="/contacto" className={styles.primaryBtn}>
+            <Link
+              href="/contacto"
+              className={styles.primaryBtn}
+              target="_blank"
+            >
               Agenda una asesoría laboral
             </Link>
 

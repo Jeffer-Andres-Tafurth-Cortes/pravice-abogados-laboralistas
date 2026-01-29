@@ -7,7 +7,7 @@ import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
 
 const handleClick = () => {
-  window.open("", "_blank");
+  window.open("/contacto", "_blank");
 };
 
 export default function Navbar() {
