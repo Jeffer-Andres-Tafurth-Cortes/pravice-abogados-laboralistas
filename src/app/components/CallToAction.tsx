@@ -3,21 +3,24 @@ import Link from "next/link";
 
 export default function CallToAction() {
   return (
-    <>
-      {/* =========================
-          CTA FINAL
-      ========================== */}
-      <section className={styles.cta}>
-        <h2>Proteja su empresa con asesoría legal experta</h2>
-        <p>
-          Contáctenos hoy y reciba una orientación inicial con nuestros abogados
-          laboralistas.
-        </p>
+    <section className={styles.cta} aria-labelledby="cta-laboral">
+      <h2 id="cta-laboral">
+        Abogados laboralistas especializados en derecho laboral
+      </h2>
 
-        <Link href="/contacto" className={styles.primaryBtn}>
-          Solicitar asesoría
-        </Link>
-      </section>
-    </>
+      <p>
+        Proteja su empresa y evite sanciones con el respaldo de abogados
+        laboralistas expertos en contratos de trabajo, despidos, procesos
+        disciplinarios y gestión de conflictos laborales.
+      </p>
+
+      <Link
+        href="/contacto"
+        className={styles.primaryBtn}
+        aria-label="Solicitar asesoría con abogados laboralistas"
+      >
+        Solicitar asesoría legal
+      </Link>
+    </section>
   );
 }
