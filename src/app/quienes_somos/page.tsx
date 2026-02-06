@@ -3,27 +3,28 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./QuienesSomos.module.css";
+import Image from "next/image";
 
 const advantages = [
   {
     title: "Experiencia y enfoque especializado",
     description:
-      "Contamos con un enfoque técnico y estratégico que nos permite analizar cada situación de forma integral, brindando soluciones jurídicas claras y bien fundamentadas.",
+      "Contamos con un enfoque técnico y estratégico enfocado en la gestión jurídica y la toma de decisiones informadas. Analizamos cada caso de manera integral, evaluando riesgos, alternativas y consecuencias legales, con el objetivo de ofrecer soluciones claras, bien fundamentadas y alineadas con la normativa vigente en Colombia.",
   },
   {
     title: "Acompañamiento cercano y personalizado",
     description:
-      "Acompañamos a nuestros clientes en cada etapa del proceso, ofreciendo comunicación constante, claridad en la información y atención personalizada.",
+      "Brindamos un acompañamiento permanente y personalizado durante todas las etapas del proceso jurídico. Mantenemos una comunicación clara y constante con nuestros clientes, explicando cada actuación y recomendación de forma comprensible, para que puedan tomar decisiones con tranquilidad y respaldo profesional.",
   },
   {
     title: "Cobertura en todo Colombia",
     description:
-      "Prestamos nuestros servicios a nivel nacional, con atención remota y oficina principal en Bogotá, facilitando el acceso a asesoría jurídica desde cualquier ciudad.",
+      "Prestamos nuestros servicios jurídicos a nivel nacional, combinando atención remota eficiente con presencia institucional. Esto nos permite asesorar a empresas y personas en cualquier ciudad del país, garantizando accesibilidad, agilidad en los trámites y un servicio oportuno sin barreras geográficas.",
   },
   {
     title: "Compromiso con resultados",
     description:
-      "Trabajamos con un enfoque orientado a resultados, priorizando la prevención de riesgos, la eficiencia en los procesos y la toma de decisiones informadas.",
+      "Nuestro trabajo está orientado a la obtención de resultados concretos y sostenibles. Priorizamos la prevención de riesgos legales, la optimización de los procesos y la correcta aplicación de la ley, buscando siempre proteger los intereses de nuestros clientes y aportar valor real a cada decisión jurídica.",
   },
 ];
 
@@ -34,7 +35,7 @@ export default function QuienesSomos() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % advantages.length);
-    }, 4000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -108,14 +109,31 @@ export default function QuienesSomos() {
           <h3>Nuestra historia</h3>
           <p>
             Nuestra firma nace con el propósito de ofrecer un servicio jurídico
-            moderno, transparente y accesible, adaptado a las necesidades
-            actuales de empresas y organizaciones en Colombia. A lo largo del
-            tiempo hemos consolidado una forma de trabajo basada en la
-            confianza, el análisis riguroso y el acompañamiento permanente.
+            sólido, transparente y alineado con las necesidades actuales de
+            empresas y personas en Colombia. Desde nuestros inicios, hemos
+            trabajado bajo un enfoque técnico, preventivo y estratégico,
+            orientado a la correcta toma de decisiones legales.
+          </p>
+
+          <p>
+            A lo largo de nuestra trayectoria, hemos consolidado una forma de
+            trabajo basada en la confianza, el análisis riguroso de cada caso y
+            el acompañamiento permanente de nuestros clientes, priorizando la
+            protección de sus intereses y el cumplimiento de la normativa
+            vigente.
           </p>
         </div>
 
-        <div className={styles.historyImage} />
+        <div className={styles.historyImage}>
+          <Image
+            src="/logo_pravice.png"
+            alt="Equipo jurídico de Pravice Abogados en Colombia"
+            fill
+            className={styles.historyImg}
+            sizes="(max-width: 900px) 100vw, 50vw"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

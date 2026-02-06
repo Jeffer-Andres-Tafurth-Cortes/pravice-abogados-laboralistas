@@ -111,26 +111,36 @@ export default function Home() {
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
             <span>
-              Especialistas en derecho laboral y seguridad social empresarial
+              Abogados laboralistas especializados en derecho laboral y
+              seguridad social para empresas, con amplio conocimiento de la
+              normativa colombiana
             </span>
-          </div>
-
-          <div className={styles.whyItem}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Enfoque estratégico orientado a empresas y empleadores</span>
           </div>
 
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
             <span>
-              Prevención de riesgos legales y reducción de contingencias
-              laborales
+              Asesoría laboral estratégica enfocada en empresas y empleadores,
+              orientada a la correcta toma de decisiones y al cumplimiento legal
             </span>
           </div>
 
           <div className={styles.whyItem}>
             <FontAwesomeIcon icon={faCheckCircle} />
-            <span>Atención personalizada con cobertura en todo Colombia</span>
+            <span>
+              Prevención de riesgos legales laborales y reducción de
+              contingencias mediante análisis jurídico y acompañamiento
+              permanente
+            </span>
+          </div>
+
+          <div className={styles.whyItem}>
+            <FontAwesomeIcon icon={faCheckCircle} />
+            <span>
+              Atención personalizada en derecho laboral con cobertura en todo
+              Colombia, de forma presencial en Bogotá como remota al resto del
+              pais
+            </span>
           </div>
         </div>
       </section>

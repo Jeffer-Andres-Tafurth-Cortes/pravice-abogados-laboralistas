@@ -173,11 +173,17 @@
 }
 
 .historyImage {
+  position: relative; /* 🔑 obligatorio para next/image fill */
   width: 100%;
-  height: 300px;
+  height: 340px; /* 🔑 altura controlada */
   border-radius: 20px;
-  background: linear-gradient(135deg, #f4c300, #c4911a);
-  opacity: 0.25;
+  overflow: hidden;
+  background-color: #f1f5f9; /* fallback elegante */
+}
+
+.historyImg {
+  object-fit: cover; /* 🔑 llena el espacio sin deformar */
+  object-position: center top; /* 🔥 clave para imagen institucional */
 }
 
 /* =========================
