@@ -10,27 +10,47 @@ export default function NovedadesLaborales() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   /* =========================
+     VARIANTS
+  ========================= */
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  /* =========================
      NOTICIA DESTACADA
   ========================= */
+
   const featuredNews = {
     tag: "Reforma laboral",
     title:
       "Reforma laboral 2025 en Colombia: cambios clave que impactan jornadas, recargos y contratación",
     description:
-      "El Congreso de la República aprobó una reforma laboral que introduce ajustes progresivos en la jornada máxima semanal, incrementa los recargos nocturnos y dominicales, y redefine aspectos contractuales que afectan directamente la gestión de talento humano en las empresas. La normativa busca fortalecer la protección del trabajador, promover la formalización laboral y modificar esquemas tradicionales de contratación.",
+      "El Congreso de la República aprobó una reforma laboral que introduce ajustes progresivos en la jornada máxima semanal, incrementa los recargos nocturnos y dominicales, y redefine aspectos contractuales que afectan directamente la gestión de talento humano en las empresas.",
     link: "https://www.reuters.com/world/americas/colombias-senate-approves-labor-reform-amid-tension-with-petro-2025-06-18/",
   };
 
   /* =========================
-     LISTADO DE NOTICIAS
+     LISTADO
   ========================= */
+
   const news = [
     {
       date: "Enero 2026",
       title:
         "Afiliación obligatoria a la ARL para trabajadoras domésticas sin excepción",
       description:
-        "El Ministerio del Trabajo reiteró la obligatoriedad de afiliar a las trabajadoras domésticas al Sistema de Seguridad Social y a la Administradora de Riesgos Laborales (ARL), independientemente del número de horas trabajadas. El incumplimiento puede generar sanciones económicas y responsabilidades legales para el empleador.",
+        "El Ministerio del Trabajo reiteró la obligatoriedad de afiliar a las trabajadoras domésticas al Sistema de Seguridad Social y a la ARL.",
       link: "https://www.infobae.com/colombia/2026/01/27/ley-en-colombia-exige-la-afiliacion-de-las-empleadas-domesticas-a-la-arl-sin-excepciones/",
     },
     {
@@ -38,7 +58,7 @@ export default function NovedadesLaborales() {
       title:
         "Reducción progresiva de la jornada laboral a 42 horas semanales en Colombia",
       description:
-        "La implementación gradual de la reducción de la jornada laboral obliga a las empresas a reorganizar turnos, revisar contratos vigentes y ajustar presupuestos de nómina. Este cambio normativo impacta directamente la estructura operativa y financiera de las organizaciones.",
+        "La reducción de la jornada laboral obliga a reorganizar turnos y ajustar presupuestos de nómina.",
       link: "https://cambiocolombia.com/economia/articulo/2025/6/lo-que-realmente-cambiara-en-su-empleo-con-la-nueva-ley-laboral-jornada-contratos/",
     },
     {
@@ -46,13 +66,13 @@ export default function NovedadesLaborales() {
       title:
         "Cambios en prima de servicios y recargos tras la nueva reforma laboral",
       description:
-        "Las modificaciones introducidas por la reforma laboral inciden en el cálculo de recargos y prestaciones sociales como la prima de servicios. Las empresas deben revisar sus procesos de liquidación y cumplimiento normativo para evitar contingencias legales.",
+        "Las modificaciones inciden en el cálculo de recargos y prestaciones sociales.",
       link: "https://www.elcolombiano.com/negocios/prima-diciembre-2025-cambios-reforma-laboral-colombia-pagos-fechas-calculo-FA31464890",
     },
   ];
 
   /* =========================
-     PREGUNTAS FRECUENTES (10)
+     FAQ
   ========================= */
   const faqs = [
     {
@@ -117,27 +137,33 @@ export default function NovedadesLaborales() {
         {/* HEADER */}
         <motion.header
           className={styles.header}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <h2>Novedades laborales en Colombia: cambios legales y tendencias</h2>
+          <h2>Novedades laborales en Colombia</h2>
           <p>
-            Análisis actualizado sobre reformas, decisiones judiciales y cambios
-            normativos que impactan a empleadores y empresas en Colombia.
+            Reformas, decisiones judiciales y cambios normativos que impactan a
+            empresas y empleadores.
           </p>
         </motion.header>
 
         {/* NOTICIA DESTACADA */}
         <motion.article
           className={styles.featured}
-          initial={{ opacity: 0, scale: 0.97 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
+          whileHover={{ y: -6 }}
         >
-          <div className={styles.featuredImage}>
+          <motion.div
+            className={styles.featuredImage}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.4 }}
+          >
             <Image
               src="/fotoBogota.jpg"
               alt="Vista de Bogotá, Colombia"
@@ -146,80 +172,108 @@ export default function NovedadesLaborales() {
               sizes="(max-width: 900px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
             />
-          </div>
+          </motion.div>
 
           <div className={styles.featuredContent}>
             <span className={styles.tag}>{featuredNews.tag}</span>
             <h3>{featuredNews.title}</h3>
             <p>{featuredNews.description}</p>
-            <Link
-              href={featuredNews.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.readMore}
-            >
-              Ver noticia completa →
-            </Link>
+
+            <motion.div whileHover={{ x: 4 }}>
+              <Link
+                href={featuredNews.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.readMore}
+              >
+                Ver noticia completa →
+              </Link>
+            </motion.div>
           </div>
         </motion.article>
 
-        {/* LISTADO */}
-        <div className={styles.list}>
+        {/* LISTADO CON STAGGER */}
+        <motion.div
+          className={styles.list}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {news.map((item, i) => (
             <motion.article
               key={i}
               className={styles.item}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.15 }}
-              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -5 }}
             >
               <span className={styles.date}>{item.date}</span>
               <h4>{item.title}</h4>
               <p>{item.description}</p>
-              <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                Leer noticia →
-              </Link>
+
+              <motion.div whileHover={{ x: 4 }}>
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Leer noticia →
+                </Link>
+              </motion.div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         {/* FAQ */}
-        <section className={styles.faq}>
-          <h3>Preguntas frecuentes sobre derecho laboral en Colombia</h3>
+        <motion.section
+          className={styles.faq}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3>Preguntas frecuentes</h3>
 
           <div className={styles.faqList}>
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
-                <div key={index} className={styles.faqItem}>
+                <motion.div key={index} className={styles.faqItem} layout>
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     className={styles.faqQuestion}
                   >
                     {faq.question}
-                    <span className={styles.icon}>{isOpen ? "–" : "+"}</span>
+
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      +
+                    </motion.span>
                   </button>
 
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
                         className={styles.faqAnswer}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
                       >
                         <p>{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </section>
+        </motion.section>
       </div>
     </section>
   );

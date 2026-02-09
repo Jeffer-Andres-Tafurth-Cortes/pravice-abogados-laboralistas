@@ -14,6 +14,7 @@ import {
   faClipboardList,
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -79,9 +80,30 @@ const services = [
 ];
 
 export default function Servicios() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
+      {/* HEADER */}
+      <motion.div
+        className={styles.header}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <h2>Servicios de derecho laboral en Colombia</h2>
 
         <p>
@@ -90,19 +112,40 @@ export default function Servicios() {
           empresas y trabajadores en Colombia. Contamos con atención a nivel
           nacional y oficina principal en Bogotá.
         </p>
-      </div>
+      </motion.div>
 
-      <div className={styles.grid}>
+      {/* GRID DE SERVICIOS */}
+      <motion.div
+        className={styles.grid}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {services.map((service, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.icon}>
+          <motion.div
+            key={index}
+            className={styles.card}
+            variants={fadeUp}
+            transition={{ duration: 0.6 }}
+            whileHover={{
+              y: -8,
+              transition: { duration: 0.3 },
+            }}
+          >
+            <motion.div
+              className={styles.icon}
+              whileHover={{ scale: 1.15, rotate: 3 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <FontAwesomeIcon icon={service.icon} />
-            </div>
+            </motion.div>
+
             <h3>{service.title}</h3>
             <p>{service.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

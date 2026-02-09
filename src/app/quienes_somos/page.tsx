@@ -31,7 +31,7 @@ const advantages = [
 export default function QuienesSomos() {
   const [index, setIndex] = useState(0);
 
-  // ⏱ Slider automático
+  // Slider automático
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % advantages.length);
@@ -40,10 +40,32 @@ export default function QuienesSomos() {
     return () => clearInterval(interval);
   }, []);
 
+  // Variantes reutilizables
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <section className={styles.container}>
-      {/* 1️⃣ Descripción general */}
-      <div className={styles.intro}>
+      {/* 1️⃣ INTRO */}
+      <motion.div
+        className={styles.intro}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <h2>¿Quiénes somos?</h2>
         <p>
           Somos una firma dedicada a la prestación de servicios jurídicos y de
@@ -52,15 +74,27 @@ export default function QuienesSomos() {
           Acompañamos a empresas y personas en la toma de decisiones legales,
           con un enfoque preventivo, técnico y humano.
         </p>
-      </div>
+      </motion.div>
 
-      {/* 2️⃣ Abogados */}
-      <div className={styles.team}>
+      {/* 2️⃣ EQUIPO */}
+      <motion.div
+        className={styles.team}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h3>Nuestro equipo</h3>
 
         <div className={styles.teamGrid}>
           {[1, 2, 3].map((item) => (
-            <div key={item} className={styles.card}>
+            <motion.div
+              key={item}
+              className={styles.card}
+              variants={fadeUp}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8 }}
+            >
               <div className={styles.photoPlaceholder} />
               <h4>Profesional del equipo</h4>
               <p>
@@ -68,13 +102,20 @@ export default function QuienesSomos() {
                 acompañamiento estratégico y gestión de procesos, enfocado en
                 brindar soluciones eficientes y responsables a cada caso.
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      {/* 3️⃣ Ventajas (slider automático) */}
-      <div className={styles.advantages}>
+      {/* 3️⃣ VENTAJAS (SLIDER) */}
+      <motion.div
+        className={styles.advantages}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <h3>¿Por qué elegirnos?</h3>
 
         <div className={styles.sliderContainer}>
@@ -82,9 +123,9 @@ export default function QuienesSomos() {
             <motion.div
               key={index}
               className={styles.sliderCard}
-              initial={{ x: 80, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -80, opacity: 0 }}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -60 }}
               transition={{ duration: 0.6 }}
             >
               <h4>{advantages[index].title}</h4>
@@ -94,37 +135,54 @@ export default function QuienesSomos() {
 
           <div className={styles.dots}>
             {advantages.map((_, i) => (
-              <span
+              <motion.span
                 key={i}
                 className={`${styles.dot} ${i === index ? styles.active : ""}`}
+                animate={{ scale: i === index ? 1.2 : 1 }}
+                transition={{ duration: 0.3 }}
               />
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* 4️⃣ Historia */}
-      <div className={styles.history}>
-        <div className={styles.historyText}>
+      {/* 4️⃣ HISTORIA */}
+      <motion.div
+        className={styles.history}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          className={styles.historyText}
+          initial={{ x: -60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h3>Nuestra historia</h3>
           <p>
             Nuestra firma nace con el propósito de ofrecer un servicio jurídico
             sólido, transparente y alineado con las necesidades actuales de
-            empresas y personas en Colombia. Desde nuestros inicios, hemos
-            trabajado bajo un enfoque técnico, preventivo y estratégico,
-            orientado a la correcta toma de decisiones legales.
+            empresas y personas en Colombia.
           </p>
 
           <p>
-            A lo largo de nuestra trayectoria, hemos consolidado una forma de
-            trabajo basada en la confianza, el análisis riguroso de cada caso y
-            el acompañamiento permanente de nuestros clientes, priorizando la
-            protección de sus intereses y el cumplimiento de la normativa
-            vigente.
+            Hemos consolidado una metodología basada en la confianza, el
+            análisis riguroso y el acompañamiento permanente, priorizando la
+            protección de los intereses de nuestros clientes.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={styles.historyImage}>
+        <motion.div
+          className={styles.historyImage}
+          initial={{ x: 60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          whileHover={{ scale: 1.03 }}
+        >
           <Image
             src="/logo_pravice.png"
             alt="Equipo jurídico de Pravice Abogados en Colombia"
@@ -133,8 +191,8 @@ export default function QuienesSomos() {
             sizes="(max-width: 900px) 100vw, 50vw"
             priority
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

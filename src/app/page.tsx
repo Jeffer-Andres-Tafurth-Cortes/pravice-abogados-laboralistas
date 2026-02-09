@@ -11,8 +11,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import HomeNotice from "./components/HomeNotice";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  /* =========================
+     VARIANTS
+  ========================= */
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.95 },
+    show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <main>
       <HomeNotice />
@@ -21,21 +45,26 @@ export default function Home() {
           HERO
       ========================== */}
       <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1>
+        <motion.div
+          className={styles.heroContent}
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer}
+        >
+          <motion.h1 variants={fadeUp}>
             Abogados laboralistas en Colombia especializados en la defensa de
             <span> empresas y empleadores</span>
-          </h1>
+          </motion.h1>
 
-          <p>
+          <motion.p variants={fadeUp}>
             Somos una firma de abogados laboralistas con sede en Bogotá y
             cobertura en todo Colombia. Brindamos asesoría legal estratégica en
             derecho laboral y seguridad social, ayudando a empresas y
             empleadores a prevenir riesgos, resolver conflictos y tomar
             decisiones jurídicas seguras.
-          </p>
+          </motion.p>
 
-          <div className={styles.heroActions}>
+          <motion.div className={styles.heroActions} variants={fadeUp}>
             <Link
               href="/contacto"
               className={styles.primaryBtn}
@@ -47,136 +76,128 @@ export default function Home() {
             <Link href="/servicios" className={styles.secondaryBtn}>
               Servicios en derecho laboral
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* =========================
           SERVICIOS
       ========================== */}
-      <section className={styles.services}>
-        <h2>Servicios de abogados laboralistas para empresas en Colombia</h2>
+      <motion.section
+        className={styles.services}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
+        <motion.h2 variants={fadeUp}>
+          Servicios de abogados laboralistas para empresas en Colombia
+        </motion.h2>
 
-        <div className={styles.servicesGrid}>
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faBriefcase} />
-            <h3>Asesoría laboral empresarial permanente</h3>
-            <p>
-              Brindamos asesoría jurídica continua a empresas y empleadores en
-              Colombia, apoyando la correcta gestión de relaciones laborales,
-              contratos de trabajo, reglamentos internos y el cumplimiento de la
-              normativa laboral vigente.
-            </p>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faFileContract} />
-            <h3>Contratación, desvinculación y liquidaciones</h3>
-            <p>
-              Elaboramos y revisamos contratos laborales, procesos de
-              terminación, liquidaciones y acuerdos, garantizando seguridad
-              jurídica y reducción de contingencias para las empresas.
-            </p>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faScaleBalanced} />
-            <h3>Defensa judicial en procesos laborales</h3>
-            <p>
-              Representamos a empresas y empleadores en procesos judiciales
-              laborales, demandas, conciliaciones y litigios ante las
-              autoridades competentes, con enfoque estratégico y preventivo.
-            </p>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faHandshake} />
-            <h3>Conciliaciones y negociación de conflictos laborales</h3>
-            <p>
-              Diseñamos estrategias de conciliación y negociación para la
-              solución efectiva de conflictos laborales, minimizando riesgos
-              legales y protegiendo los intereses empresariales.
-            </p>
-          </div>
-        </div>
-      </section>
+        <motion.div className={styles.servicesGrid} variants={staggerContainer}>
+          {[
+            {
+              icon: faBriefcase,
+              title: "Asesoría laboral empresarial permanente",
+              text: "Brindamos asesoría jurídica continua a empresas y empleadores en Colombia...",
+            },
+            {
+              icon: faFileContract,
+              title: "Contratación, desvinculación y liquidaciones",
+              text: "Elaboramos y revisamos contratos laborales, procesos de terminación...",
+            },
+            {
+              icon: faScaleBalanced,
+              title: "Defensa judicial en procesos laborales",
+              text: "Representamos a empresas y empleadores en procesos judiciales laborales...",
+            },
+            {
+              icon: faHandshake,
+              title: "Conciliaciones y negociación de conflictos laborales",
+              text: "Diseñamos estrategias de conciliación y negociación...",
+            },
+          ].map((service, i) => (
+            <motion.div
+              key={i}
+              className={styles.serviceCard}
+              variants={scaleIn}
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              <FontAwesomeIcon icon={service.icon} />
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
 
       {/* =========================
             POR QUÉ ELEGIRNOS
         ========================== */}
-      <section className={styles.why}>
-        <h2>¿Por qué elegir nuestros abogados laboralistas en Colombia?</h2>
+      <motion.section
+        className={styles.why}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
+        <motion.h2 variants={fadeUp}>
+          ¿Por qué elegir nuestros abogados laboralistas en Colombia?
+        </motion.h2>
 
-        <div className={styles.whyGrid}>
-          <div className={styles.whyItem}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-            <span>
-              Abogados laboralistas especializados en derecho laboral y
-              seguridad social para empresas, con amplio conocimiento de la
-              normativa colombiana
-            </span>
-          </div>
-
-          <div className={styles.whyItem}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-            <span>
-              Asesoría laboral estratégica enfocada en empresas y empleadores,
-              orientada a la correcta toma de decisiones y al cumplimiento legal
-            </span>
-          </div>
-
-          <div className={styles.whyItem}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-            <span>
-              Prevención de riesgos legales laborales y reducción de
-              contingencias mediante análisis jurídico y acompañamiento
-              permanente
-            </span>
-          </div>
-
-          <div className={styles.whyItem}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-            <span>
-              Atención personalizada en derecho laboral con cobertura en todo
-              Colombia, de forma presencial en Bogotá como remota al resto del
-              pais
-            </span>
-          </div>
-        </div>
-      </section>
+        <motion.div className={styles.whyGrid} variants={staggerContainer}>
+          {[1, 2, 3, 4].map((_, i) => (
+            <motion.div
+              key={i}
+              className={styles.whyItem}
+              variants={fadeUp}
+              whileHover={{ x: 5 }}
+            >
+              <FontAwesomeIcon icon={faCheckCircle} />
+              <span>
+                Asesoría laboral estratégica orientada a empresas, prevención de
+                riesgos y cumplimiento normativo.
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
 
       {/* =========================
           PROCESO
       ========================== */}
-      <section className={styles.process}>
-        <h2>Nuestro proceso de asesoría y defensa laboral</h2>
+      <motion.section
+        className={styles.process}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
+        <motion.h2 variants={fadeUp}>
+          Nuestro proceso de asesoría y defensa laboral
+        </motion.h2>
 
-        <div className={styles.processSteps}>
-          <div className={styles.step}>
-            <span>1</span>
-            <p>
-              Análisis jurídico del caso y asesoría laboral inicial
-              personalizada
-            </p>
-          </div>
-
-          <div className={styles.step}>
-            <span>2</span>
-            <p>
-              Diseño de la estrategia legal laboral más adecuada para su empresa
-              o caso
-            </p>
-          </div>
-
-          <div className={styles.step}>
-            <span>3</span>
-            <p>
-              Ejecución del proceso y acompañamiento jurídico continuo hasta su
-              resolución
-            </p>
-          </div>
-        </div>
-      </section>
+        <motion.div className={styles.processSteps} variants={staggerContainer}>
+          {[1, 2, 3].map((step, i) => (
+            <motion.div
+              key={i}
+              className={styles.step}
+              variants={fadeUp}
+              whileHover={{ scale: 1.05 }}
+            >
+              <span>{step}</span>
+              <p>
+                {step === 1 &&
+                  "Análisis jurídico del caso y asesoría inicial personalizada"}
+                {step === 2 && "Diseño de la estrategia legal laboral adecuada"}
+                {step === 3 &&
+                  "Ejecución del proceso y acompañamiento continuo"}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
     </main>
   );
 }

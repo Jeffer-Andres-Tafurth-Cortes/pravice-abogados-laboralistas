@@ -4,52 +4,100 @@ import styles from "./Contacto.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Contacto() {
+  /* =========================
+     VARIANTS
+  ========================= */
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         {/* ======================
             HEADER
         ====================== */}
-        <header className={styles.header}>
+        <motion.header
+          className={styles.header}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h2>Contacto con abogados laboralistas en Colombia</h2>
           <p>
             En Pravice Abogados brindamos asesoría legal especializada en
             derecho laboral y seguridad social para empresas y empleadores en
             toda Colombia, con atención directa desde nuestra oficina en Bogotá.
           </p>
-        </header>
+        </motion.header>
 
         {/* ======================
             CONTACTO DIRECTO
         ====================== */}
-        <div className={styles.actions}>
-          <a
+        <motion.div
+          className={styles.actions}
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* WhatsApp */}
+          <motion.a
+            variants={fadeUp}
             href="https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.whatsappBtn}
             aria-label="Contactar abogados laboralistas por WhatsApp"
+            whileHover={{ y: -4, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <FontAwesomeIcon icon={faWhatsapp} />
             Asesoría laboral inmediata por WhatsApp
-          </a>
+          </motion.a>
 
-          <a
+          {/* Email */}
+          <motion.a
+            variants={fadeUp}
             href="mailto:contacto@tudominio.com"
             className={styles.emailBtn}
             aria-label="Enviar correo a abogados laboralistas en Bogotá"
+            whileHover={{ y: -4, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <FontAwesomeIcon icon={faEnvelope} />
             Solicitar asesoría legal por correo
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
         {/* ======================
             MAPA
         ====================== */}
-        <div className={styles.mapSection}>
+        <motion.div
+          className={styles.mapSection}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
           <h3>Oficina de abogados laboralistas en Bogotá</h3>
 
           <p className={styles.mapDescription}>
@@ -58,15 +106,19 @@ export default function Contacto() {
             legales para clientes en toda Colombia.
           </p>
 
-          <div className={styles.mapWrapper}>
+          <motion.div
+            className={styles.mapWrapper}
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.4 }}
+          >
             <iframe
               title="Ubicación oficina de abogados laboralistas en Bogotá - Pravice Abogados"
               src="https://www.google.com/maps?q=Abogados%20Especialistas%20Pravice%20Bogot%C3%A1&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
